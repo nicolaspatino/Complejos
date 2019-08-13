@@ -13,10 +13,7 @@ public final class Funciones {
     private static Complejo respuesta;
     public Funciones(){ 
     }
-    public static Complejo suma(){
-        
-        return respuesta;
-    }
+
     public static double Modulo(Complejo num){
         return Math.sqrt(num.getA()*num.getA()+num.getIm()*num.getIm());
     }
@@ -44,4 +41,21 @@ public final class Funciones {
     public static Complejo conjugado(Complejo c){
      return new Complejo(c.getA(), -c.getIm());
   }
+    public Polar CartesianToPolar(Complejo x){
+        double r;
+        r = Modulo(x);
+        double rads = Math.atan(x.getIm()/x.getA());
+        double angulo = Math.toDegrees(rads);
+        return new Polar(angulo,r);
+    }
+    public Complejo PolarToCartesian(Polar x){
+        double r = x.getHipoten();
+        double radian = Math.toRadians(x.getAngulo()); 
+        return new Complejo(r*Math.cos(radian),r*Math.sin(radian));
+    }
+    public double fase(Complejo x){
+        double rads = Math.atan(x.getIm()/x.getA());
+        double angulo = Math.toDegrees(rads);
+        return angulo;
+    }
 }
