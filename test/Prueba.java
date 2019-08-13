@@ -26,7 +26,7 @@ public class Prueba {
         Complejo b  = new Complejo(1,-5);
         Complejo respuesta = app.Suma(a, b);
         Complejo c = new Complejo(5,-2);
-        assertEquals(respuesta, c);
+        assertEquals(respuesta.toString(), c.toString());
     }
      @Test
     public void restaTest() {
@@ -34,8 +34,8 @@ public class Prueba {
         Complejo n1 = new Complejo(6,5);
         Complejo n2 = new Complejo(1,-5);
         Complejo respuesta = app.Resta(n1, n2);
-        Complejo esperado = new Complejo(4,0);
-        assertEquals(respuesta, esperado);
+        Complejo esperado = new Complejo(5,10);
+        assertEquals(respuesta.toString(), esperado.toString());
     }
      @Test
     public void multiplicacionTest() {
@@ -44,6 +44,6 @@ public class Prueba {
         Complejo b = new Complejo(5,-7);
         Complejo respuesta = app.Producto(a, b);
         Complejo c = new Complejo(41,-13);
-        assertEquals(respuesta, c);
+        assertEquals(respuesta.toString(), c.toString());
     }
 }

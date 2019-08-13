@@ -30,5 +30,12 @@ public final class Complejo {
    public void setA(double nuevoA){
        imaginario =nuevoA;
    }
-    
+    @Override
+    public String toString() {
+        String simbolo = "";
+        if(imaginario >= 0){
+            simbolo="+";
+        }
+        return numeroA + " " + simbolo + " " + imaginario + 'i';
+    }
 }
